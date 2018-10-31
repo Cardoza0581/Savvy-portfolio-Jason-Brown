@@ -1,0 +1,24 @@
+{
+  "name": "JasonBrown",
+  "version": "1.0.0",
+  "description": "![](https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/05/22224952/beagle-puppy-in-large-cushion-chair.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cardoza0581/Savvy-portfolio-Jason-Brown.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cardoza0581/Savvy-portfolio-Jason-Brown/issues"
+  },
+  "homepage": "https://github.com/Cardoza0581/Savvy-portfolio-Jason-Brown#readme",
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "parcel-bundler": "^1.10.3"
+  }
+}
