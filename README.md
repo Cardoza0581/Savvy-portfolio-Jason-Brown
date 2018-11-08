@@ -1,3 +1,5 @@
+<html>
+
 # Welcome to my SavvyCoders Porfolio Project!
 
 ![](https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/05/22224952/beagle-puppy-in-large-cushion-chair.jpg)
@@ -12,5 +14,7 @@ Contact Information
 
 3.
 
+
+</html>
 
 

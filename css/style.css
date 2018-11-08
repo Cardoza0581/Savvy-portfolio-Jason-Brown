@@ -20,6 +20,49 @@ ul {
     background-color: chocolate;
     font-style: italic;
 }
+#navigation li {
+    background-color: papayawhip;
+}
+
+div.container {
+    background-color: black;
+}
+
+div.container {
+    background-color: darkolivegreen;
+}
+
+#navigation li:first-child{
+    background-color: papayawhip;
+}
+
+#navigation li:last-child{
+    background-color: magenta;
+}
+
+#navigation li:nth-child(2n){
+    background-color: crimson;
+}
+
+#navigation li:hover {
+    background-color: gold;
+}
+
+#navigation > ul > li {
+    display: inline;
+}
+
+#navigation .dropdown {
+    display: none;
+}
+
+#navigation a:hover + .dropdown {
+    display: block;
+}
+
+#header h1, #header h2 {
+    color: purple;
+}
 
 li {
     font-weight: bold;
@@ -27,6 +70,10 @@ li {
 
 #middle {
     font-size: 2em;
+}
+
+.container > h1{
+    background-color: darkgrey;
 }
 
 .brand {
