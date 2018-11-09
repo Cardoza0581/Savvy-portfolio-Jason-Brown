@@ -2,6 +2,7 @@
 
 body {
     background-color: orchid;
+    margin: 0;
 }
 
 h1 {
@@ -29,19 +30,31 @@ div.container {
 }
 
 div.container {
-    background-color: darkolivegreen;
+    background-color: rgb(156, 236, 18);
 }
 
 #navigation li:first-child{
-    background-color: papayawhip;
+    background-color: white;
+    color: #841617;
+}
+
+
+#navigation li:nth-child(3n){
+    color: #841617;
+    background-color: white;
 }
 
 #navigation li:last-child{
-    background-color: magenta;
+    color: #841617;
+    background-color: white;
 }
 
 #navigation li:nth-child(2n){
-    background-color: crimson;
+    background-color: #841617;
+}
+
+#navigation li:nth-child(2n){
+    color: white;
 }
 
 #navigation li:hover {
@@ -50,13 +63,21 @@ div.container {
 
 #navigation > ul > li {
     display: inline;
+    position: relative;
+    padding: 3px;
+
+    
 }
 
 #navigation .dropdown {
+    position: absolute;
     display: none;
+    top: 15px;
+    left: 0;
 }
 
-#navigation a:hover + .dropdown {
+#navigation a:hover + .dropdown,
+#navigation a + .dropdown:hover {
     display: block;
 }
 
@@ -90,6 +111,11 @@ li {
 }
 #navigation{
     background-color: rgb(39, 241, 12);
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
 }
 #content{
     background-color: darkorange;
