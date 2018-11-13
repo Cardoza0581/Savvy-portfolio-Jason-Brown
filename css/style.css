@@ -7,6 +7,9 @@ body {
 
 h1 {
     background-color: rgb(0, 255, 255);
+    font-family: 'Monoton', cursive;
+    font-size: 2em;
+
 }
 
 h2 {
@@ -61,10 +64,20 @@ div.container {
     background-color: gold;
 }
 
+#navigation > ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0;
+
+    }
+
 #navigation > ul > li {
     display: inline;
     position: relative;
-    padding: 3px;
+    margin: 10px;
 
     
 }
@@ -117,6 +130,8 @@ li {
     left: 0;
     width: 100vw;
 }
+
+
 #content{
     background-color: darkorange;
     padding: 20px;
