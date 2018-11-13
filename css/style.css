@@ -2,7 +2,14 @@
 
 body {
     background-color: orchid;
-    margin: 0;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: min-content min-content auto min-content;
+    grid-template-areas: 
+    "navigation"
+    "header"
+    "content"
+    "footer";
 }
 
 h1 {
@@ -68,8 +75,8 @@ div.container {
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding: 0;
 
     }
@@ -121,27 +128,51 @@ li {
 }
 #header{
     background-color: blue;
+    grid-area: header;
 }
 #navigation{
     background-color: rgb(39, 241, 12);
-    padding: 5px;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100vw;
+    grid-area: navigation;
+
+
 }
 
 
 #content{
     background-color: darkorange;
     padding: 20px;
+    grid-area: content;
 }
 #footer{
     background-color: gold;
+    grid-area: footer;
 }
 img{
     display: block;
         margin: 4em auto;
         max-width: 400px;
         width: 90%;
+}
+
+@media (min-width: 750px){
+    body {
+        grid-template-columns: 15% auto;
+        grid-template-rows: min-content auto min-content;
+        grid-template-areas:
+            "navigation header"
+            "navigation content"
+            "navigation footer";
+
+    }
+    #navigation >ul {
+        flex-direction: column;
+    
+    }
+
+    #navigation .dropdown{
+        top: 0;
+        left: 6vw;
+    }
 }
