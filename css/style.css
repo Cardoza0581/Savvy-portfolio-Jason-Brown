@@ -1,22 +1,15 @@
-
-
 body {
     background-color: orchid;
     display: grid;
     min-height: 100vh;
     grid-template-rows: min-content min-content auto min-content;
-    grid-template-areas: 
-    "navigation"
-    "header"
-    "content"
-    "footer";
+    grid-template-areas: "navigation" "header" "content" "footer";
 }
 
 h1 {
     background-color: rgb(0, 255, 255);
     font-family: 'Monoton', cursive;
     font-size: 2em;
-
 }
 
 h2 {
@@ -31,6 +24,7 @@ ul {
     background-color: chocolate;
     font-style: italic;
 }
+
 #navigation li {
     background-color: papayawhip;
 }
@@ -43,27 +37,26 @@ div.container {
     background-color: rgb(156, 236, 18);
 }
 
-#navigation li:first-child{
+#navigation li:first-child {
     background-color: white;
     color: #841617;
 }
 
-
-#navigation li:nth-child(3n){
+#navigation li:nth-child(3n) {
     color: #841617;
     background-color: white;
 }
 
-#navigation li:last-child{
+#navigation li:last-child {
     color: #841617;
     background-color: white;
 }
 
-#navigation li:nth-child(2n){
+#navigation li:nth-child(2n) {
     background-color: #841617;
 }
 
-#navigation li:nth-child(2n){
+#navigation li:nth-child(2n) {
     color: white;
 }
 
@@ -71,22 +64,19 @@ div.container {
     background-color: gold;
 }
 
-#navigation > ul {
+#navigation>ul {
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 0;
+}
 
-    }
-
-#navigation > ul > li {
+#navigation>ul>li {
     display: inline;
     position: relative;
     margin: 10px;
-
-    
 }
 
 #navigation .dropdown {
@@ -96,8 +86,7 @@ div.container {
     left: 0;
 }
 
-#navigation a:hover + .dropdown,
-#navigation a + .dropdown:hover {
+#navigation a:hover+.dropdown, #navigation a+.dropdown:hover {
     display: block;
 }
 
@@ -113,7 +102,7 @@ li {
     font-size: 2em;
 }
 
-.container > h1{
+.container>h1 {
     background-color: darkgrey;
 }
 
@@ -121,57 +110,52 @@ li {
     color: rgb(226, 43, 73);
 }
 
-.container{
+.container {
     margin: 0 auto;
     max-width: 900px;
     width: 90%;
 }
-#header{
+
+#header {
     background-color: blue;
     grid-area: header;
 }
-#navigation{
+
+#navigation {
     background-color: rgb(39, 241, 12);
     position: sticky;
     top: 0;
     grid-area: navigation;
-
-
 }
 
-
-#content{
+#content {
     background-color: darkorange;
     padding: 20px;
     grid-area: content;
 }
-#footer{
+
+#footer {
     background-color: gold;
     grid-area: footer;
 }
-img{
+
+img {
     display: block;
-        margin: 4em auto;
-        max-width: 400px;
-        width: 90%;
+    margin: 4em auto;
+    max-width: 400px;
+    width: 90%;
 }
 
-@media (min-width: 750px){
+@media (min-width: 750px) {
     body {
         grid-template-columns: 15% auto;
         grid-template-rows: min-content auto min-content;
-        grid-template-areas:
-            "navigation header"
-            "navigation content"
-            "navigation footer";
-
+        grid-template-areas: "navigation header" "navigation content" "navigation footer";
     }
-    #navigation >ul {
+    #navigation>ul {
         flex-direction: column;
-    
     }
-
-    #navigation .dropdown{
+    #navigation .dropdown {
         top: 0;
         left: 6vw;
     }
