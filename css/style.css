@@ -118,7 +118,7 @@ li {
 }
 
 #navigation {
-    background-color: rgb(39, 241, 12);
+    background-color: rgb(23, 126, 10);
     position: sticky;
     top: 0;
     grid-area: navigation;
