@@ -14,7 +14,8 @@ h1 {
 
 h2 {
     background-color: #0077cc;
-}
+    display: flex; justify-content: center;
+    }
 
 p {
     background-color: blueviolet;
