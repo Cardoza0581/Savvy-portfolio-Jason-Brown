@@ -1,4 +1,5 @@
-export default `
+export default function Content(){
+    return `
 <div id="content">
     <div class="container">
       <p style="font-style: italic">I have a background as an Administrative assistant. I also was the Recall
@@ -11,3 +12,4 @@ export default `
   </div>
 
 `;
+}
