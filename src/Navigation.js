@@ -1,24 +1,32 @@
-export default function Navigation(){
-    return `
-<div id="navigation">
-    <div id="container"> 
-    <ul>
-      <li>
-        <a href="./blog">Blog</a></li>
-      <li>
-        <a href="./content">Content</a></li>
+import { capitalize, lowerCase } from 'lodash';
+function buildLinks(links){
+    var list = '';
+    var link = '';
 
-      <li>
-        <a href="./projects">Projects</a>
-        <ul class="dropdown">
-          <li>first</li>
-          <li>second</li>
-          <li>third</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  </div>
+    for(let i = 0; i < links.length; i++){
+        if(links[i] !== 'Home'){
+            link = links[i];
+        }
 
-`;
+        list += `
+          <li>
+              <a href="/${lowerCase(link)}" data-navigo>
+              ${capitalize(links[i])}
+              </a>
+          </li>
+        `;
+    }
+
+    return list;
 }
+
+export default function Navigation(state){
+    return `
+      <div id="navigation">
+        <ul class="container">
+          ${buildLinks(state[state.active].links)}
+        </ul>
+      </div>
+    `;
+}
+
