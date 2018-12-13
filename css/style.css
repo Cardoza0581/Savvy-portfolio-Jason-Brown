@@ -8,7 +8,7 @@
 
 h1 {
     background-color: rgb(0, 255, 255);
-    font-family: 'Monoton', cursive;
+    font-family: 'Shojumaru', cursive;
     font-size: 2em;
 }
 
@@ -22,7 +22,7 @@ p {
 }
 
 ul {
-    background-color: chocolate;
+    background-color: #841617;
     font-style: italic;
 }
 
@@ -31,7 +31,7 @@ ul {
 }
 
 div.container {
-    background-color: rgb(156, 236, 18);
+    background-color: rgb(248, 6, 6);
 }
 
 #navigation li:first-child {
@@ -50,7 +50,8 @@ div.container {
 }
 
 #navigation li:nth-child(2n) {
-    background-color: #841617;
+    color: #841617;
+    background-color: white;
 }
 
 #navigation li:nth-child(2n) {
@@ -88,7 +89,7 @@ div.container {
 }
 
 #header h1, #header h2 {
-    color: purple;
+    color: #7F12DE;
 }
 
 li {
@@ -100,11 +101,11 @@ li {
 }
 
 .container>h1 {
-    background-color: darkgrey;
+    background-color: rgb(169, 169, 169);
 }
 
 .brand {
-    color: rgb(226, 43, 73);
+    color:rgb(226, 43, 73);
 }
 
 .container {
@@ -119,7 +120,7 @@ li {
 }
 
 #navigation {
-    background-color: rgb(23, 126, 10);
+    background-color: rgb(185, 79, 79);
     position: sticky;
     top: 0;
     grid-area: navigation;
