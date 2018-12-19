@@ -1,6 +1,15 @@
-export default function Blog(){
+function buildPost(post){
     return `
-    <p>Filler information would go here about the blog.</p>
-    <p>More information about the blog, at least we hope.</p>
+    <div class="post>
+        <h2>${post.title}</h2>
+        <p>${post.body}</p>
+    </div>
     `;
+}
+
+export default function Blog(state){
+    return state
+        .posts
+        .map(buildPost)
+        .join('');
 }

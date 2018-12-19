@@ -6,10 +6,12 @@ import Navigation from './src/Navigation';
 import Navigo from 'navigo';
 import { capitalize } from 'lodash';
 
+var root = document.querySelector('#root');
 var router = new Navigo(window.location.origin);
 
 
 var State = {
+    'posts': [],
     'active': 'Home',
     'Home': {
         'title': 'Welcome to my Savvy Coders Portfolio Project!!!!',
@@ -29,12 +31,32 @@ var State = {
     }
 };
 
-var root = document.querySelector('#root');
+
+class Store{
+    constructor(state){
+        this.listener = () => {};
+        this.state = state;
+    }
+
+    dispatch(reducer){
+        this.state = reducer(this.state);
+
+        render(this.state); // eslint-disable-line
+    }
+
+    addListener(listener){
+        this.listener = listener;
+    }
+}
+
+var store = new Store(State); // eslint-disable-line
 
 function handleNavigation(params){
-    State.active = capitalize(params.page);
+    store.dispatch((state) => {
+        state.active = capitalize(params.page);
   
-  render(State); //eslint-disable-line
+        return state;
+    });
 }
 
 function render(state){
@@ -43,7 +65,6 @@ function render(state){
           ${Header(state)}
           ${Content(state)}
           ${Footer(state)}
-
           `;
 
     greet();
@@ -57,3 +78,11 @@ router
     .on('/:page', handleNavigation)
     .on('/', () => handleNavigation({ 'page': 'Home' }))
     .resolve();
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then((response) => response.json())
+    .then((posts) => store.dispatch((state) => {
+        state.posts = posts;
+
+        return state;
+    }));
