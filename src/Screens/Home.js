@@ -1,5 +1,7 @@
+import { html } from 'lit-html';
+
 export default function Home(){
-    return `
+    return html`
     <p style="font-style: italic">I have a background as an Administrative assistant. I also was the Recall
     Coordinator and have followed the compliance guidelines issued by the FDA and DEA dealing with pharacuetical
     items.</p>

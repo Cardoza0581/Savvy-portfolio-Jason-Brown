@@ -1,15 +1,6 @@
-function buildPost(post){
-    return `
-    <div class="post>
-        <h2>${post.title}</h2>
-        <p>${post.body}</p>
-    </div>
-    `;
-}
+import Post from './Post';
+import { html } from 'lit-html';
 
 export default function Blog(state){
-    return state
-        .posts
-        .map(buildPost)
-        .join('');
+    return html`${state.posts.map(Post)}`;
 }

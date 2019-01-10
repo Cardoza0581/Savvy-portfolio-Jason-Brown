@@ -1,5 +1,7 @@
+import { html } from 'lit-html';
+
 export default function Projects(){
-    return `
-    <h3> Here Be my Projects Page!</h3>
+    return html`
+      <h3>HERE BE MY PROJECTS</h3>
     `;
 }

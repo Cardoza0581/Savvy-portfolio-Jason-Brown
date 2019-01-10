@@ -1,11 +1,11 @@
 import Content from './src/Content';
 import Footer from './src/Footer';
-import greet from './src/Greeting';
 import Header from './src/Header';
 import Navigation from './src/Navigation';
 import Navigo from 'navigo';
 import { capitalize } from 'lodash';
-
+import Store from './src/Store';
+import { html, render } from 'lit-html';
 var root = document.querySelector('#root');
 var router = new Navigo(window.location.origin);
 
@@ -31,58 +31,40 @@ var State = {
     }
 };
 
-
-class Store{
-    constructor(state){
-        this.listener = () => {};
-        this.state = state;
-    }
-
-    dispatch(reducer){
-        this.state = reducer(this.state);
-
-        render(this.state); // eslint-disable-line
-    }
-
-    addListener(listener){
-        this.listener = listener;
-    }
-}
-
-var store = new Store(State); // eslint-disable-line
+var store = new Store(State);
 
 function handleNavigation(params){
+    State.active = capitalize(params.page);
     store.dispatch((state) => {
         state.active = capitalize(params.page);
-  
+        
         return state;
     });
 }
 
-function render(state){
-    root.innerHTML = `
-          ${Navigation(state)}
-          ${Header(state)}
-          ${Content(state)}
-          ${Footer(state)}
-          `;
-
-    greet();
-
-    router.updatePageLinks();
+function App(state){
+    return html`
+    ${Navigation(state)}
+    ${Header(state)}
+    ${Content(state)}
+    ${Footer(state)}
+    `;
 }
-
-render(State);
-
+function start(state){
+    render(App(state), root);
+}
+store.addListener(start);
 router
     .on('/:page', handleNavigation)
     .on('/', () => handleNavigation({ 'page': 'Home' }))
     .resolve();
 
+router.updatePageLinks();
+
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then((response) => response.json())
     .then((posts) => store.dispatch((state) => {
         state.posts = posts;
-
+       
         return state;
     }));
